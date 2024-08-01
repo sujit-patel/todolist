@@ -28,12 +28,14 @@ const page = () => {
     randorTask = mainTask.map((t, i) => {
       return (
         <>
-          <div key={i} className='flex justify-between m-4 text-white'>
+          <div className='flex justify-between m-4 text-white'>
+            <div key={i}>
             <h3 className='font-bold text-xl'>{t.titel}</h3>
             <h5 className='text-xl'>{t.details}</h5>
+            </div>
             <button className='text-red-500 bg-black font-bold px-5 py-2 rounded border border-black'
             onClick={()=>{
-              removeTask();
+              removeTask(i);
             }}>Delete</button>
           </div>
           <hr className='m-2 bg-white' />
